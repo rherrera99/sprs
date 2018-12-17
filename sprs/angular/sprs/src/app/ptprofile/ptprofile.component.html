@@ -1,0 +1,65 @@
+<div class="fix-header fix-sidebar card-no-border">
+  <div id="main-wrapper">
+    <app-headerlogin></app-headerlogin>
+    <app-leftpane></app-leftpane>
+    <div class="page-wrapper">
+        <ngx-loading [show]="loading"></ngx-loading>
+      <div class="container-fluid section-margin-top">
+        <div class="row">
+          
+          <div class="col-lg-12 col-md-6 col-sm-6 col-xs-4 profile-txt">
+            <h2 class="pull-left">Profile</h2>
+            <h2 class="pull-right"><a [routerLink]="['/patient/edit']" title="Edit Profile" class="btn btn-primary btn-circle btn-lg "> <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></h2>
+          </div>
+        
+     
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+            <div class="box-bg-color profile-pic2">
+              <div class="text-center">
+                <img src={{currentUser.profile_pic}}  class="img-responsive" />
+
+                <!-- <input type="file" (change)="onFileChanged($event)"> -->
+
+                <h1>{{currentUser.first_name}} {{currentUser.last_name}}</h1>
+                <h2>{{ currentUser.age }}</h2>              
+              </div>
+
+              <address class="text-center">{{currentUser.address}}
+                </address>
+            </div>
+          </div>
+          <div class="col-lg-8  col-md-7 col-sm-12 col-xs-12 ipadmarginTop ipadmarginTopMobile">
+            <div class="box-bg-color2">
+              <h3>About Me</h3>              
+              <hr>
+              <p>{{currentUser.about}}</p>
+              <h3 style="padding-top:10px;">Personal Information</h3>
+              <hr>
+              <p class="padT15">
+                <strong>Email : </strong> {{currentUser.email}}</p>
+              <p>
+                <strong>Contact No. : </strong>{{currentUser.contact_no}}</p>
+              <p>
+                <strong>Gender : </strong>{{currentUser.gender}}</p>
+              <p>
+                <strong>Height :</strong> {{currentUser.height}}</p>
+              <p>
+                <strong>Weight : </strong>{{currentUser.weight}} <strong *ngIf="currentUser.weight !='';"> kg</strong></p>
+
+                <p>
+                  <strong>Joined on: </strong>{{currentUser.joindate}}</p>
+
+                <p>
+                  <strong>Logged in on: </strong>{{currentUser.last_login}}</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

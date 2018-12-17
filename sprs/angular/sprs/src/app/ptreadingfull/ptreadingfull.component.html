@@ -1,0 +1,61 @@
+<div class="fix-header fix-sidebar card-no-border">
+  <div id="main-wrapper">
+    <ngx-loading [show]="loading"></ngx-loading>
+    <app-headerlogin></app-headerlogin>
+    <app-leftpane></app-leftpane>
+    <div class="page-wrapper">
+
+      <ngx-loading [show]="loading"></ngx-loading>
+      <div class="container section-margin-top">
+        <div class="row custome-form">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
+              <div>
+                <span [innerHTML]="theHtmlString" class="error"></span>
+                <br/>
+              </div>
+              <h2>Reading View</h2>
+              <hr>
+              <div class="row">
+
+                <!-- <div class="col-md-4 col-sm-4 col-xs-12">
+                  <label for="">{{list.fname}}</label>
+                </div>
+                <div class="col-md-8 col-sm-8  col-xs-12">
+                  <label for="">{{list.fvalue}}</label>
+                </div> -->
+
+              
+
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Reading Name</th>
+                    <th>Reading Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let list of readinglist">
+                    <td>{{list.fname}}</td>
+                    <td *ngIf="list.field_type != 9" >{{list.fvalue}}</td>
+                    <td *ngIf="list.field_type == 9"><img src={{list.fvalue}}  height="150" width="150"/></td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

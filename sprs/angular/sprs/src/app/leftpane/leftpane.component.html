@@ -1,0 +1,43 @@
+<aside class="left-sidebar">
+  <div class="scroll-sidebar" style="position:relative">
+    <nav class="sidebar-nav">
+      <!--<div class="profile-pic">
+            <img src="img/user.jpg" class="img-circle" alt="profile-pic"/>
+            </div>-->
+      <ul id="sidebarnav">
+        <li class="profile-pic">
+
+          <img src={{profile_pic_main}} class="img-responsive" />
+          <span class="displayNone user1-name"> &nbsp; {{name}}
+            <br> &nbsp; {{age}}</span>
+
+        </li>
+        <li>
+          <a class="waves-effect waves-dark" routerLink="/myprofile" routerLinkActive="active" aria-expanded="false">
+            <img src="../assets/imgs/prifile-icon.png" alt="icon" />
+            <span class="hide-menu"> &nbsp; My Profile</span>
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect waves-dark" routerLink="/readings/list" routerLinkActive="active" aria-expanded="false">
+            <img src="../assets/imgs/list-icon.png" alt="icon" />
+            <span class="hide-menu"> &nbsp; My Readings</span>
+          </a>
+        </li>
+        <li>
+          <a class="waves-effect waves-dark" routerLink="/readings/add" routerLinkActive="active" aria-expanded="false">
+            <img src="../assets/imgs/add-list-icon.png" alt="icon" />
+            <span class="hide-menu"> &nbsp; Add New Reading</span>
+          </a>
+        </li>
+        
+        <li>
+          <a class="waves-effect waves-dark" (click)="logout()"  aria-expanded="false">
+            <img src="../assets/imgs/logout-icon.png" alt="icon" />
+            <span class="hide-menu"> &nbsp; Logout</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>

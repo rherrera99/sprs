@@ -1,0 +1,70 @@
+<div class="" style="background:url(./assets/imgs/login-bg.jpg) center center no-repeat #000;">
+
+  <app-header></app-header>
+
+  <div class="container container-pad">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-3 "></div>
+          <div class="col-md-offset-3 col-md-6 ">
+            <div class="sign-box">
+              <form class="form-vertical login-form" id="loginptForm" [formGroup]="loginptForm" (submit)="loginPatient()" novalidate="novalidate">
+                <div class="col-md-12 text-center" style="padding:0px">
+                  <img src="./assets/imgs/login-user01.png" />
+                  <h2 style="color:#622422;padding:25px;font-size:26px;">Doctor Forgot Password                   
+                  </h2>
+                </div>
+<br/>
+                <div class="form-group">
+                  <div class="input-icon">
+                    <input type="text" formControlName="new_password" id="new_password" name="new_password" ngControl="new_password" class="form-control form-control2 regtxt"
+                      placeholder="New password">
+                  </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="input-icon">
+                      <input type="text" formControlName="retype" id="retype" name="retype" ngControl="retype" class="form-control form-control2 regtxt"
+                        placeholder="Retype password">
+                    </div>
+  
+                  </div>
+
+                <div>
+                  <span [innerHTML]="theHtmlString" class="error"></span>
+                  <span [innerHTML]="theHtmlStringss" class="success"></span>
+                </div>
+
+                <!-- <div [hidden]="test" class="alert-danger">
+                      Passwords do not match
+                   </div> -->
+                <!--<div class="form-group padT">
+                <input type="checkbox" name=" " value="" class=""> &nbsp; Remember me<br>
+                </div>-->
+
+                <div class="form-actions text-center">
+                    <div class="table-responsive" *ngIf="theHtmlStringss !='';else nodata">
+                        <a [routerLink]="['/']" class="btn btn-success submit-btn" title="Go To Login" style="font-size: 18px;">Go To Login</a>
+                  </div>
+                
+                  <ng-template #nodata>
+                      <button type="submit" class="btn btn-success submit-btn" [disabled]="!loginptForm.valid">Submit</button>
+                      <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                    </ng-template>
+                </div>
+              </form>
+            </div>
+            <!--- box end-->
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $("#dr_password").password('toggle');
+    $("#pt_password").password('toggle'); 
+  </script>

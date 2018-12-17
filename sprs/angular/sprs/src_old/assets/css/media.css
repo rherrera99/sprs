@@ -1,0 +1,183 @@
+
+@media (max-width: 360px){
+	.navbar-brand img{
+		width:263px;
+	}
+	.nav-item .fa-bars{
+		color:#622422 !important;
+		margin-left:200px;
+	}
+	h1{font-size: 23px !important;}
+	h3{font-size: 15px !important;}
+	address{font-size: 13px !important;}
+	.container-fluid {padding: 0 0px 25px 0px;}
+	.container-pad{padding: 0px 20px 50px 20px !important;}
+	.MT30{margin-top:0px !important;}
+	.patient{margin-bottom:30px;}
+	.login-comp-log {padding: 0px !important;}
+	.custome-form {padding: 16px !important;margin-bottom: 40px;}
+	.padzero{padding:0px !important;}
+	.date-form {margin-top: 0px !important;margin-bottom: 30px;}
+	.ipadmarginTopMobile{margin-top:30px !important;}
+	.Mcustome-col-lg-3 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100% !important;
+    -ms-flex: 0 0 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+}
+.Mcustome-col-lg-9 {
+  -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100% !important;
+    -ms-flex: 0 0 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+}
+.custome-rightpad{padding-right:15px !important;}
+.custome-leftpad{padding-left:15px !important;}
+.footer span{text-align:center !important;}
+}
+/*--@media (min-width: 768px) { 
+.ipadmarginTop{margin-top:0px !important;}
+.box-bg-color2 p{
+	font-size:14px !important;
+	margin-bottom:0.2em !important;
+}
+.padT15{padding-top:0px !important;}
+}--*/
+@media (max-width: 768px) {
+	.navbar-brand img{
+		width:263px;
+	}
+	.nav-item .fa-bars{
+		color:#622422 !important;
+		margin-left:200px;
+	}
+	h1{font-size: 23px !important;}
+	h3{font-size: 15px !important;}
+	address{font-size: 13px !important;}
+	.container-fluid {padding: 0 20px 25px 20px;}
+	.container-pad{padding: 0px 20px 50px 20px !important;}
+	.MT30{margin-top:0px !important;}
+	.patient{margin-bottom:30px;}
+	.login-comp-log {padding: 0px !important;}
+	.custome-form {padding: 16px !important;margin-bottom: 40px ;}
+	.padzero{padding:0px !important;}
+	.date-form {margin-top: 0px !important;margin-bottom: 30px;}
+	.ipadmarginTopMobile{margin-top:30px !important;}
+	.box-bg-color2 {
+padding: 22px 25px 5px 25px !important;
+}
+	.Mcustome-col-lg-3 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100% !important;
+    -ms-flex: 0 0 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+}
+.Mcustome-col-lg-9 {
+  -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100% !important;
+    -ms-flex: 0 0 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+}
+.custome-rightpad{padding-right:15px !important;}
+.custome-leftpad{padding-left:15px !important;}
+
+}
+@media only screen and (min-width:768px) and (max-width:1024px){
+	.mini-sidebar .sidebar-nav #sidebarnav > li > a {
+    padding: 9px 7px !important;
+    width: 50px;
+}
+.profile-pic img {
+    width: 40px !important;
+    height: 40px !important;
+    margin-bottom: 0px!important;
+	    margin-top: 10px;
+}
+	
+	.patient{padding:18px !important;margin-bottom:30px;}
+	.patient h2 {font-size: 23px !important;}
+	.patient p {font-size: 15px !important;}
+	.text {font-size: 14px;padding: 6px 32px !important;}
+	.date-form {margin-top: 0px !important;margin-bottom: 30px;}
+	.displayNone{display:none;}
+	.displayBlock{display:block;}
+	.ipadmarginTopMobile{margin-top:0px !important;}
+	
+}
+@media (max-width: 1024px){
+.custome-col-lg-3 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 40%;
+    -ms-flex: 0 0 40% ;
+    flex: 0 0 40% ;
+    max-width: 40%;
+}
+.custome-col-lg-9 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 60% ;
+    -ms-flex: 0 0 60% ;
+    flex: 0 0 60% ;
+    max-width: 60% ;
+}
+.ipadmarginTop {
+    margin-top: 0px;
+}
+.box-bg-color2 p{
+	font-size:14px !important;
+	margin-bottom:0.2em !important;
+}
+.padT15{padding-top:0px !important;}
+address {font-size: 13px !important;;padding-top: 0px !important;}
+h1{font-size: 23px !important;}h2{font-size: 19px !important;}
+	h3{font-size: 15px !important;}
+	.box-bg-color {
+   
+    padding: 15px 0px 12px 0px !important;;
+    
+}
+.box-bg-color2 {
+padding: 10px 25px 5px 25px !important;
+}
+
+}
+
+/* @media (max-width: 1200px){ */
+/* .custome-col-lg-3 { */
+    /* -webkit-box-flex: 0; */
+    /* -webkit-flex: 0 0 40% !important; */
+    /* -ms-flex: 0 0 40% !important; */
+    /* flex: 0 0 40% !important; */
+    /* max-width: 40% !important; */
+/* } */
+/* .custome-col-lg-9 { */
+    /* -webkit-box-flex: 0; */
+    /* -webkit-flex: 0 0 60% !important; */
+    /* -ms-flex: 0 0 60% !important; */
+    /* flex: 0 0 60% !important; */
+    /* max-width: 60% !important; */
+/* } */
+/* .ipadmarginTop { */
+    /* margin-top: 0px !important; */
+/* } */
+/* .box-bg-color2 p{ */
+	/* font-size:14px !important; */
+	/* margin-bottom:0.2em !important; */
+/* } */
+/* .padT15{padding-top:0px !important;} */
+/* address {font-size: 13px !important;;padding-top: 0px !important;} */
+/* h1{font-size: 23px !important;} */
+	/* h3{font-size: 15px !important;} */
+	/* .box-bg-color { */
+   
+    /* padding: 15px 0px 12px 0px !important;; */
+    
+/* } */
+/* .box-bg-color2 { */
+/* padding: 22px 25px 5px 25px !important; */
+/* } */
+
+/* } */

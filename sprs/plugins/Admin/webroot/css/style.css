@@ -1,0 +1,151 @@
+label.error,
+.error-message {
+    color: #d33724;
+    font-size: 13px;
+    font-weight: 400;
+}
+input.error,
+input.form-error {
+    border: 1px solid #d33724;
+}
+.lower {
+    text-transform: lowercase;
+}
+a {
+    color: #1b9ae4;
+}
+a:hover,
+a:active,
+a:focus {
+    color: #0b8bd6;
+}
+.table.table-vertical-align > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.toast {
+    background-color: #1b9ae4;
+}
+.toast-info {
+    background-color: #30d0f7;
+}
+.toast-warning {
+    background-color: #eda128;
+}
+.toast-error {
+    background-color: #DD4B39;
+}
+.toast-success {
+    background-color: #22d583;
+}
+
+table.layout-fixed {
+    table-layout: fixed;
+}
+
+table.layout-fixed  td{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.paginator-load {
+    display: none;
+    margin-top: 7px;
+    position: absolute;
+    width: 100%;
+}
+
+.no-record{
+    margin: 15px 0px;
+    text-align: center;
+}
+
+.ajaxloader{
+    background-image: url('../img/loader.gif');
+    height: 32px;
+    width: 32px;
+    display: block;
+    margin: 0 auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.photo-preview-list{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 1px solid #d2d6de;
+    height: 50px;
+    text-align: center;
+    width: 50px;
+}
+
+.logo-center{
+    margin: 0 auto;
+}
+
+/* Utility */
+.text-black{
+    color: #000000;
+}
+.text-red{
+    color: #f8353e; 
+}
+.lower {
+    text-transform: lowercase;
+}
+
+.modal-sm.modal-sm-450 {
+    width: 450px;
+}
+
+nav ul.dropdown-menu{
+    margin: 0px !important;
+}
+
+.image-preview {
+    border: 1px solid #d2d6de;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 160px;
+    text-align: center;
+    width: 160px;
+}
+
+.view-image-preview {
+    border: 1px solid #d2d6de;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80px;
+    text-align: center;
+    width: 80px;
+    border-radius: 50%;
+}
+
+.position-relative{
+    position: relative !important;
+}
+.btn-reset{
+    margin-left: 10px !important;
+}
+
+.view-page-seprator{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.view-page-title{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;   
+}
+
+.building_tab > li,.building_tab > li.active {
+    cursor:pointer;
+}

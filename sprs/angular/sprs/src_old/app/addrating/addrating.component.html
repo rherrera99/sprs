@@ -1,0 +1,65 @@
+<div class="fix-header fix-sidebar card-no-border">
+  <div id="main-wrapper">
+    <app-headerlogin></app-headerlogin>
+    <app-leftpane></app-leftpane>
+    <div class="page-wrapper">
+      <div class="container section-margin-top">
+        <div class="row">
+          <div class="col-xl col-sm col-md">&nbsp;</div>
+          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+            <form id="addRatingForm" [formGroup]="addRatingForm" (submit)="addRating()" class="custome-form">
+              <h2>FORM 1</h2>
+              <hr>
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <input type="text" formControlName="txt_date" id="txt_date" name="txt_date" ngControl="txt_date" class="form-control form-control1 input-marginTop"
+                    placeholder="Date">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" name="txt_timeto" id="txt_timeto" ngControl="txt_timeto" formControlName="txt_timeto" class="form-control form-control1 input-marginTop"
+                    placeholder="Time To">
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" name="txt_timefrom" id="txt_timefrom" ngControl="txt_timefrom" formControlName="txt_timefrom" class="form-control form-control1 input-marginTop"
+                    placeholder="Time From">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" name="txt_weight" id="txt_weight" ngControl="txt_weight" formControlName="txt_weight" class="form-control form-control1 input-marginTop"
+                    placeholder="Weight">
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" name="txt_height" id="txt_height" ngControl="txt_height" formControlName="txt_height" class="form-control form-control1 input-marginTop"
+                    placeholder="Heartbeat">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" name="txt_sugar" id="txt_sugar" ngControl="txt_sugar" formControlName="txt_sugar" class="form-control form-control1 input-marginTop"
+                    placeholder="Sugar">
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" name="txt_bloodpresure" id="txt_bloodpresure" ngControl="txt_bloodpresure" formControlName="txt_bloodpresure"
+                    class="form-control form-control1 input-marginTop" placeholder="Bloodpresure">
+                </div>
+              </div>
+              <div class="row row-marginTop">
+
+                <div class="col-sm-12">
+                  <button type="submit" [disabled]="!addRatingForm.valid" class="btn btn-large btn-success submit-btn float-right" style="font-size:22px !important;padding: 8px 45px !important;">SUBMIT</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+          <div class="col-xl col-sm col-md">&nbsp;</div>
+        </div>
+
+      </div>
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

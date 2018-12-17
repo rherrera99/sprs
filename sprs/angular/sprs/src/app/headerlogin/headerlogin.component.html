@@ -1,0 +1,29 @@
+<header class="topbar" >
+  <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
+    <div class="navbar-header">
+
+
+        <div *ngIf="loginChack =='pt';else nodata">
+      <a class="navbar-brand"[routerLink]="['/myprofile']">
+        <img src="./assets/imgs/logo.jpg" class="light-logo" alt="homepage hidden-sm" />
+      </a>
+      </div>
+      <ng-template #nodata>
+          <a class="navbar-brand" [routerLink]="['/profile']">
+              <img src="./assets/imgs/logo.jpg" class="light-logo" alt="homepage hidden-sm" />
+            </a>
+        </ng-template>
+    </div>
+    <div class="navbar-collapse">
+      <ul class="navbar-nav mr-auto mt-md-0">
+        <li class="nav-item">
+          <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)" >
+            <i class="fa fa-bars"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav my-lg-0">
+      </ul>
+    </div>
+  </nav>
+</header>

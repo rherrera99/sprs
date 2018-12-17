@@ -1,0 +1,49 @@
+<div class="sign-box">
+  <form class="form-vertical login-form" id="logindrForm" [formGroup]="logindrForm" (submit)="loginDoctor()" novalidate="novalidate">
+    <div class="col-md-12 text-center" style="padding:0px">
+      <img src="./assets/imgs/login-user02.png" />
+      <h2 style="color:#622422;padding:25px;font-size:26px;">Doctor
+        <span style="color:#000;font-weight:300;">Login</span>
+      </h2>
+    </div>
+    <div class="form-group">
+      <div class="input-icon">
+        <input type="text" formControlName="username" id="dr_username" name="username" ngControl="username" 
+        class="form-control form-control2 regtxt" placeholder="Username" autofocus="autofocus" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+
+        <div *ngIf="submitted && f.username.errors" class="error">
+          <div *ngIf="f.username.errors.required">Username is required</div>
+      </div>
+
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-icon">
+        <input id="dr_password" type="password" formControlName="password" ngControl="password" name="password" class="form-control form-control2 password regtxt2" placeholder="Password"
+          data-toggle="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+
+          <div *ngIf="submitted && f.password.errors" class="error">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <span [innerHTML]="theHtmlString" class="error"></span>
+    </div>
+    <div class="checkbox padT">
+      <input type="checkbox" id="remember_dr" name="remember_dr" formControlName="remember_dr" ngControl="remember_dr"  value="">
+      <label for="remember_dr"> &nbsp; Remember me</label>
+    </div>
+    <div class="form-actions text-center">
+
+      <button type="submit" class="btn btn-success submit-btn" [disabled]="!logindrForm.valid">Login</button><img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+      
+      <p class="login-footer-txt">
+          <a [routerLink]="['/drforgot']" title="Forgot Password">Forgot Password?</a> &nbsp; | &nbsp;
+        <a href="#">Register With Invite</a>
+      </p>
+
+    </div>
+  </form>
+</div>

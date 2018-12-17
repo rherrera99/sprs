@@ -1,0 +1,58 @@
+<div class="sign-box">
+  <form class="form-vertical login-form" id="loginptForm" [formGroup]="loginptForm" (submit)="submitLoginForm();" novalidate="novalidate">
+    <div class="col-md-12 text-center" style="padding:0px">
+      <img src="./assets/imgs/login-user01.png" />
+      <h2 style="color:#622422;padding:25px;font-size:26px;">
+        <span style="color:#000;font-weight:300;">Login</span>
+      </h2>
+    </div>
+     <div class="form-group" style="text-align:center">
+    	<div class="checkbox">
+            <input type="radio" formControlName="role" id="Doctor" name="role"  value="1">
+            <label for="Doctor" ngControl="role"> &nbsp; Doctor &nbsp;</label>
+  
+            <input type="radio" formControlName="role" id="Patient" name="role"   value="2" [(ngModel)]="role_set" [checked]="role_set" >
+            <label for="Patient" ngControl="role"> &nbsp; Patient</label>
+        </div>
+    </div>
+
+    <div class="form-group"> 
+      <div class="input-icon">
+        <input type="text" formControlName="username" id="username" name="username" ngControl="username" class="form-control form-control2 regtxt"
+          placeholder="Username">
+      </div>
+
+    </div>
+    <div class="form-group">
+      <div class="input-icon">
+        <input id="pt_password" type="password" formControlName="password" id="password" ngControl="password" name="password" class="form-control form-control2 regtxt2"
+          placeholder="Password" data-toggle="password">
+      </div>
+
+    </div>
+
+    <div>
+      <span [innerHTML]="theHtmlString" class="error"></span>
+    </div>
+    
+    <!-- <div [hidden]="test" class="alert-danger">
+      Passwords do not match
+   </div> -->
+    <!--<div class="form-group padT">
+<input type="checkbox" name=" " value="" class=""> &nbsp; Remember me<br>
+</div>-->
+    <!-- <div class="checkbox padT">
+      <input type="checkbox" id="remember_pt" name="remember_pt" formControlName="remember_pt" ngControl="remember_pt" value="">
+      <label for="remember_pt"> &nbsp; Remember me</label>
+    </div> -->
+    <div class="form-actions text-center">
+
+      <button type="submit" class="btn btn-success submit-btn" [disabled]="!loginptForm.valid" >Login</button><img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+      <p class="login-footer-txt">
+        <a (click)="forgotClick()" title="Forgot Password" style="cursor: pointer;">Forgot Password?</a> &nbsp;
+        <!-- <a href="#">Register With Invite</a> -->
+      </p>
+
+    </div>
+  </form>
+</div>

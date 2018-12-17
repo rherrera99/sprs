@@ -1,0 +1,414 @@
+.profile-pic img{
+	border-radius: 100% !important;
+	border:3px solid #fff;
+	width:90px;
+	height:90px;
+	margin-bottom:30px;
+	background-color: transparent !important;
+    padding: 0px 0px !important;
+	margin-left: 6px;
+}
+.profile-pic span{
+	vertical-align:middle;
+}
+.user1-name{
+	font-size:20px;position:absolute;top:55px;color:#fff;
+}
+.user2-name{
+	font-size:19px;position:absolute;top:55px;color:#fff;
+}
+.section-margin-top{
+	padding-top:50px !important;
+}
+.row-marginTop{
+	margin-top:30px;
+}
+.input-marginTop{
+  /* margin-top:22px; */
+  margin-bottom: 24px;
+}
+.custome-form{
+	background-color: #f5f2f2;
+    padding: 40px;
+	box-shadow: 3px 5px 4px 0px #ccc;
+}
+.custome-form h2{
+	color:#6f6d6d;
+}
+.form-control1{
+	padding: 10px 15px !important;
+	height:55px !important;
+	border: 0px solid rgba(0,0,0,.15)!important;
+    border-radius: 10px !important;
+}
+.form-control2{
+	border-bottom: 1px solid #898989 !important;
+	border-top: 0px solid #333 !important;
+	border-left: 0px solid #333 !important;
+	border-right: 0px solid #333 !important;
+	 border-radius: 0px !important;
+	 padding-left: 29px !important;
+}
+.submit-btn{
+	
+    padding: 4px 45px !important;
+    font-size: 25px !important;
+    font-weight: 300;
+}
+.box-bg-color{
+	background-color:#f5f2f2;
+	padding:27px 0px 27px 0px;
+	box-shadow: 3px 5px 4px 0px #ccc;
+}
+.box-bg-color2{
+	background-color:#f5f2f2;
+	padding:30px 25px 30px 25px;
+	box-shadow: 3px 5px 4px 0px #ccc;
+}
+.box-bg-color2 h3{
+	color:#000 !important;
+}
+.box-bg-color2 p{
+	font-weight:300 !important;
+	color:#000 !important;
+	line-height:27px !important;
+}
+.profile-txt h2{
+	color:#622422 !important;
+	padding-bottom: 20px;
+}
+.padT15{
+	padding-top:0px;
+}
+.profile-pic2 img{
+	border-radius: 100% !important;
+	border:3px solid #000;
+	margin-bottom:30px;
+	    width: 200px;
+    height: 200px;
+}
+.profile-pic2 center, h1 , h2 {
+	color:#000 !important;
+}
+.profile-pic2 h2{
+	padding-top:5px;
+}
+address{
+	color:#000;
+	font-size:17px;
+	font-weight:400;
+	padding-top:20px;
+}
+
+
+.login-comp-log{
+	background-color:#fff;
+	padding:20px;
+}
+.sign-box{
+	background-color:#fff;
+	margin-top:50px;
+	border-radius:20px;
+	padding: 25px 40px;
+}
+.custome-rightpad{padding-right:30px;}
+.custome-leftpad{padding-left:30px;}
+
+.login-footer-txt{
+	font-size:14px;
+	color:#898989;
+	text-align:center;
+	padding-top:20px;
+}
+.login-footer-txt a{
+	font-size:12px;
+	color:#898989;
+	text-align:center;
+}
+
+.container-pad{
+	padding: 60px 100px 340px 100px;
+}
+.padT{
+	padding-top:15px;
+}
+.regtxt{
+background:url('../imgs/input-icon01.png') left center no-repeat;
+}
+.regtxt2{
+background:url('../imgs/input-icon02.png') left center no-repeat;
+}
+.reading-box{
+	background-color:#f5f2f2;
+	padding: 20px;
+	box-shadow: 3px 5px 4px 0px #ccc;
+	margin:10px !important;
+	font-size:14px;
+	font-family: 'Ubuntu', sans-serif !important;
+}
+.reading-txt h2{
+	color:#622422 !important;
+	padding-bottom: 20px;
+	margin-top:50px;
+}
+.reading-txt-doc h2{
+		color:#622422 !important;
+	padding-bottom: 20px;
+	margin-top:0px;
+}
+.custome-table{
+	background-color:#f5f2f2 !important;
+	box-shadow: 3px 5px 4px 0px #ccc;
+	
+}
+.custome-table td, .custome-table th {
+    border-color: #cecccc !important;
+    padding: 15px 30px !important;
+	font-size:15px !important;
+}
+.date-form{
+	    margin-top: 45px;
+		font-size:14px;
+}
+.date-form-doc {
+    margin-top: 15px;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+.pull-right{
+	float:right;
+}
+
+.patient{
+	background-color:#f5f2f2 !important;
+	border-radius:10px;
+	padding:30px;
+	position: relative;
+    width: 100%;
+}
+.patient:hover .after {
+    display: block;
+    background: rgba(0, 0, 0, .6);
+}
+.patient .image {
+  opacity: 1;
+  display: block;
+  width: 80px;
+  height:80px;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  margin-left: 40%;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.patient:hover{
+	background: rgba(0, 0, 0, 0.74) !important;
+}
+.patient:hover .image {
+  opacity: 0.3;
+}
+
+.patient:hover .middle {
+  opacity: 1;
+  
+}
+.patient h2{
+	color:#622422 !important;
+	padding-top:15px;
+	padding-bottom:10px;
+	font-size:26px;
+}
+.patient p{
+	color:#000;
+	font-size:17px;
+	font-weight:400;
+}
+.patient a{
+	color:#6f6d6d;
+	font-weight: 400;
+	font-family: 'Ubuntu', sans-serif !important;
+}
+.text {
+  background-color: #fff;
+  color: #000;
+  font-size: 16px;
+  font-weight:500;
+  padding: 16px 32px;
+  border-radius:6px;
+}
+.MT30{
+	margin-top:30px;
+}
+.input-group-addon {
+	padding: 0px !important;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #333 !important;
+    text-align: center;
+    background-color: transparent !important;
+    border: 0px solid rgba(0,0,0,.15) !important;
+     border-radius: 0px !important;
+}
+.fa-eye:before{
+	color: #a1a1a1!important;
+}
+.fa-eye-slash:before{
+	color: #a1a1a1!important;
+}
+.footer  .pull-right-by{float:right !important;}
+.maroon-color-txt{
+	color:#632523;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #a3a3a3 !important;
+  font-size:17px !important;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #a3a3a3 !important;
+  font-size:17px !important;
+  font-family: 'Ubuntu', sans-serif !important;
+} 
+:-ms-input-placeholder { /* IE 10+ */
+  color: #a3a3a3 !important;
+  font-size:17px !important;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+:placeholder { /* IE 10+ */
+  color: #a3a3a3 !important;
+  font-size:17px !important;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+.checkbox label{
+  font-size:18px !important;
+ font-family: 'Ubuntu', sans-serif !important;
+   color: #898989 !important;
+   margin-bottom:20px !important;
+}
+/*----------------CHECK BOX STYLE START----------------*/
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left:30px;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0 !important; top: 0 !important;
+  width: 20px !important; height:20px !important;
+  border: 1px solid #898989;
+  background: #fff;
+  border-radius: 7px;
+}
+[type="checkbox"]#ch1:not(:checked) + label:before,
+[type="checkbox"]#ch1:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 20px; height:20px;
+  border: 1px solid #898989;
+  background: transparent;
+  border-radius: 3px;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+[type="checkbox"]#ch2:not(:checked) + label:before,
+[type="checkbox"]#ch2:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 20px; height:20px;
+  border: 1px solid #898989;
+  background: transparent;
+  border-radius: 3px;
+}
+[type="checkbox"]#ch3:not(:checked) + label:before,
+[type="checkbox"]#ch3:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 20px; height:20px;
+  border: 1px solid #898989;
+  background: transparent;
+  border-radius: 3px;
+}
+[type="checkbox"]#ch4:not(:checked) + label:before,
+[type="checkbox"]#ch4:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 20px; height:20px;
+  border: 1px solid #898989;
+  background: transparent;
+  border-radius: 3px;
+}
+[type="checkbox"]#ch5:not(:checked) + label:before,
+[type="checkbox"]#ch5:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 20px; height:20px;
+  border: 1px solid #898989;
+  background: transparent;
+  border-radius: 3px;
+}
+[type="checkbox"]#ch6:not(:checked) + label:before,
+[type="checkbox"]#ch6:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 20px; height:20px;
+  border: 1px solid #898989;
+  background: transparent;
+  border-radius: 3px;
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '\2713';
+  position: absolute;
+  top: .3em; left: .3em;
+  font-size: 15px;
+  line-height: 0.8;
+  color: #000;
+  transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/*-------------CHECK BOX STYLE END---------------*/
+input[type="text"]::-webkit-input-placeholder {
+  color: #a3a3a3 !important;
+  font-size:17px !important;
+  font-family: 'Ubuntu', sans-serif !important;
+  font-weight:300 !important;
+}

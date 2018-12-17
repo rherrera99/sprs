@@ -1,0 +1,41 @@
+<div class="sign-box">
+  <form class="form-vertical login-form" id="loginptForm" [formGroup]="loginptForm" (submit)="loginPatient()" novalidate="novalidate">
+    <div class="col-md-12 text-center" style="padding:0px">
+      <img src="./assets/imgs/login-user01.png" />
+      <h2 style="color:#622422;padding:25px;font-size:26px;">Patient
+        <span style="color:#000;font-weight:300;">Login</span>
+      </h2>
+    </div>
+
+    <div class="form-group">
+      <div class="input-icon">
+        <input type="text" formControlName="username" id="username" name="username" ngControl="username" class="form-control form-control2 regtxt"
+          placeholder="Username">
+      </div>
+
+    </div>
+    <div class="form-group">
+      <div class="input-icon">
+        <input id="pt_password" type="password" formControlName="password" id="password" ngControl="password" name="password" class="form-control form-control2 regtxt2"
+          placeholder="Password" data-toggle="password">
+      </div>
+
+    </div>
+    <!--<div class="form-group padT">
+<input type="checkbox" name=" " value="" class=""> &nbsp; Remember me<br>
+</div>-->
+    <div class="checkbox padT">
+      <input type="checkbox" id="remember_pt" name="remember_pt" formControlName="remember_pt" ngControl="remember_pt" value="">
+      <label for="remember_pt"> &nbsp; Remember me</label>
+    </div>
+    <div class="form-actions text-center">
+
+      <button type="submit" class="btn btn-success submit-btn" [disabled]="!loginptForm.valid">Login</button>
+      <p class="login-footer-txt">
+        <a href="#">Forgot Password?</a> &nbsp; | &nbsp;
+        <a href="#">Register With Invite</a>
+      </p>
+
+    </div>
+  </form>
+</div>

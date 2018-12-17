@@ -1,0 +1,34 @@
+<div class="sign-box">
+  <form class="form-vertical login-form" id="logindrForm" [formGroup]="logindrForm" (submit)="loginDoctor()" novalidate="novalidate">
+    <div class="col-md-12 text-center" style="padding:0px">
+      <img src="./assets/imgs/login-user02.png" />
+      <h2 style="color:#622422;padding:25px;font-size:26px;">Doctor
+        <span style="color:#000;font-weight:300;">Login</span>
+      </h2>
+    </div>
+    <div class="form-group">
+      <div class="input-icon">
+        <input type="text" formControlName="username" id="dr_username" name="username" ngControl="username" class="form-control form-control2 regtxt" placeholder="Username" autofocus="autofocus">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-icon">
+        <input id="dr_password" type="password" formControlName="password" ngControl="password" name="password" class="form-control form-control2 password regtxt2" placeholder="Password"
+          data-toggle="password">
+      </div>
+    </div>
+    <div class="checkbox padT">
+      <input type="checkbox" id="remember_dr" name="remember_dr" formControlName="remember_dr" ngControl="remember_dr"  value="">
+      <label for="remember_dr"> &nbsp; Remember me</label>
+    </div>
+    <div class="form-actions text-center">
+
+      <button type="submit" class="btn btn-success submit-btn" [disabled]="!logindrForm.valid">Login</button>
+      <p class="login-footer-txt">
+        <a href="#">Forgot Password?</a> &nbsp; | &nbsp;
+        <a href="#">Register With Invite</a>
+      </p>
+
+    </div>
+  </form>
+</div>

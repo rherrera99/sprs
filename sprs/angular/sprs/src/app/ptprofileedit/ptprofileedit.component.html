@@ -1,0 +1,222 @@
+<div class="fix-header fix-sidebar card-no-border">
+    <div id="main-wrapper">
+  
+      <app-headerlogin></app-headerlogin>
+      <app-leftpane></app-leftpane>
+      <ngx-loading [show]="loading"></ngx-loading>
+      <div class="page-wrapper">
+        <div class="container section-margin-top">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  
+  
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <!-- [formGroup]="addpatientForm" -->
+                <form id="editPatientForm" [formGroup]="editPatientForm"  (ngSubmit)="editPatient()" novalidate="novalidate" class="custome-form">
+                  <div>
+                    <span [innerHTML]="theHtmlString" class="error"></span>
+                    <br/>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12 col-md-6 col-sm-6 col-xs-4 profile-txt">
+                      <h2 class="pull-left">Edit Profile</h2>
+                      <h2 class="pull-right"><a [routerLink]="['/changepassword']" title="Change Password" class="key-txt"> change password </a></h2>
+                    </div>
+                  
+  
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+
+                        <div *ngIf="submitted && f.first_name.errors" class="error">
+                            <div *ngIf="f.first_name.errors.required">First Name is required</div>
+                            <div *ngIf="f.first_name.errors.pattern">
+                              First Name not valid.Add Only Letter
+                            </div> 
+                        </div>
+                      <input type="text" formControlName="first_name" id="first_name" [(ngModel)]="currentUser.first_name" name="first_name" ngControl="first_name"
+                        class="form-control form-control1 input-marginTop" required placeholder="First Name" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }" pattern="([A-zÀ-ž\s@]){2,}">
+  
+  
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div *ngIf="submitted && f.last_name.errors" class="error">
+                            <div *ngIf="f.last_name.errors.required">Last Name is required</div>
+                            <div *ngIf="f.last_name.errors.pattern">
+                              Last Name not valid.Add Only Letter
+                            </div> 
+                        </div>
+                      <input type="text" id="last_name" formControlName="last_name" ngControl="last_name" name="last_name" [(ngModel)]="currentUser.last_name"
+                        class="form-control form-control1 input-marginTop" required placeholder="Last Name" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }"  pattern="([A-zÀ-ž\s@]){2,}">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div *ngIf="submitted && f.email.errors" class="error">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <div *ngIf="f.email.errors.email">please add a valid email</div>
+                        </div>
+
+                      <input type="email" formControlName="email" id="email" name="email" [(ngModel)]="currentUser.email" class="form-control form-control1 input-marginTop"
+                        required placeholder="Email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div *ngIf="submitted && f.contact_no.errors" class="error">
+                            <div *ngIf="f.contact_no.errors.required">Contact no  is required</div>
+                            <div *ngIf="f.contact_no.errors.pattern">
+                                Mobile number not valid.
+                              </div> 
+                        </div>
+                       
+                    
+                      <input type="text" maxlength="15"  formControlName="contact_no" id="contact_no" [(ngModel)]="currentUser.contact_no" name="contact_no"
+                        class="form-control form-control1 input-marginTop" required placeholder="Mobile" [ngClass]="{ 'is-invalid': submitted && f.contact_no.errors }" pattern="^(?:(?:\+|0{0,2})([0-9]?[0-9])(\s*[\-]\s*)?|[0]?)?[789]\d{0,12}$">
+                    </div>
+                  </div>
+  
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <!-- <input type="text" formControlName="fname" id="address" name="address" class="form-control form-control1 input-marginTop" required placeholder="Address"> -->
+                      <div *ngIf="submitted && f.address.errors" class="error">
+                        <div *ngIf="f.address.errors.required">Address is required</div>
+                    </div>
+                      <textarea name="address" formControlName="address" id="address" cols="30" rows="10" [(ngModel)]="currentUser.address" class="form-control form-control1 input-marginTop"
+                        required placeholder="Address"></textarea>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12" #startContainer>
+                      <!-- <input type="text" maxlength="15" formControlName="dob" id="dob" name="dob" [(ngModel)]="currentUser.dob" class="form-control form-control1 input-marginTop"
+                        required placeholder="Dob"> -->
+                        <div *ngIf="submitted && f.dob.errors" class="error">
+                            <div *ngIf="f.dob.errors.required">Date Of Birth is required</div>
+                        </div>
+                      <!-- <input type="text" name="dob" id='dob' formControlName="dob" ngbDatepicker #dob=
+                      "ngbDatepicker" (click)="dob.toggle()" class="form-control form-control1 datepicker input-marginTop"
+                      placeholder="" [(ngModel)]='modelTime1' [ngClass]="{ 'is-invalid': submitted && f.dob.errors }"> -->
+
+                    <input type="date" name="dob" id='dob' formControlName="dob" [(ngModel)]='currentUser.dob' class="form-control form-control1 datepicker input-marginTop"  placeholder="" [ngClass]="{ 'is-invalid': submitted && f.dob.errors }">
+
+                      <!-- <input class="form-control" placeholder="yyyy-mm-dd"
+                      name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+               <div class="input-group-append">
+                 <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+               </div> -->
+<!-- 
+                      <input type="text" name="dob"  ngbDatepicker #dob="ngbDatepicker" (click)="dob.toggle()" 
+                      class="form-control form-control1 datepicker input-marginTop"
+                    placeholder="" [(ngModel)]="currentUser.dob" > -->
+  
+                    <!-- <div class="form-row show-inputbtns">
+                        <input type="date" data-date-inline-picker="false" data-date-open-on-focus="true" />
+                    </div> -->
+                   
+                     <!-- <input id="datepicker" class="form-control col-7" [(ngModel)]="modelTime" placeholder="" ngbDatepicker 
+                     #date="ngbDatepicker"
+                        required (Change)="select(model)">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary picto-calender" (click)="date.toggle()" type="button"></button>
+  </div> -->
+   <!-- 
+                        <button class="delete" title="delete hero" (click)="delete()">x</button> 
+                      </div>-->
+  
+  
+                    </div>
+  
+  
+  
+  
+                  </div>
+  
+  
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+
+                        <div *ngIf="submitted && f.height.errors" class="error">
+                            <div *ngIf="f.height.errors.required">Height is required</div>
+                        </div>
+                      <input type="text" formControlName="height" id="height" name="height" [(ngModel)]="currentUser.height" class="form-control form-control1 input-marginTop"
+                        required placeholder="Height"  [ngClass]="{ 'is-invalid': submitted && f.height.errors }">
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div *ngIf="submitted && f.weight.errors" class="error">
+                            <div *ngIf="f.weight.errors.required">Weight is required</div>
+                        </div>
+                      <input type="text" formControlName="weight" id="weight" name="weight" [(ngModel)]="currentUser.weight" class="form-control form-control1 input-marginTop"
+                        required placeholder="Weight"  [ngClass]="{ 'is-invalid': submitted && f.weight.errors }">
+                    </div>
+                  </div>
+  
+                  <div class="row">
+                     
+
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="row">
+                          <div class="col-md-4">
+                              <label class="gen" style="color: black;">Profile image : </label>
+                            </div>
+                            <div class="col-md-8 col-sm-6 col-xs-12">
+                                <input type="file" name="photo" ng2FileSelect [uploader]="uploader"   accept=".png, .jpg, .jpeg"/>
+                            </div>
+                      </div>
+                      <!-- <input type="file" (change)="handleFileInput($event.target.files)" formControlName="profile_pic" id="profile_pic" name="profile_pic" class="form-control form-control1 input-marginTop" required placeholder="Profile Image"> -->
+                      
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="row">
+                        <br>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                          <label class="gen" style="color: black;">Gender : </label>
+                        </div>
+                        <div class="col-md-9">
+
+                            <div *ngIf="submitted && f.gender.errors" class="error">
+                                <div *ngIf="f.gender.errors.required">Gender is required</div>
+                            </div>
+                          <div class="checkbox">
+
+  
+                            <input type="radio" formControlName="gender" id="Male" name="gender" [(ngModel)]="currentUser.gender_p" required value="1">
+                            <label for="Male"> &nbsp; Male &nbsp;</label>
+  
+                            <input type="radio" formControlName="gender" id="Female" name="gender" [(ngModel)]="currentUser.gender_p" required value="2">
+                            <label for="Female"> &nbsp; Female</label>
+                          </div>
+                        </div>
+  
+  
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-12 col-sm-6 col-xs-12">
+  
+                          <!-- <div *ngIf="submitted && f.about.errors" class="error">
+                              <div *ngIf="f.about.errors.required">About is required</div>
+                          </div> -->
+                        <!-- <input type="text" formControlName="about" id="about" name="about" [(ngModel)]="currentUser.about" class="form-control form-control1 input-marginTop"
+                          required placeholder="About."  [ngClass]="{ 'is-invalid': submitted && f.about.errors }"> -->
+
+                          <textarea formControlName="about" id="about" name="about" cols="50" rows="30"
+                          
+                          [(ngModel)]="currentUser.about" class="form-control form-control1 input-marginTop"
+                           placeholder="About." ></textarea>
+
+
+                      </div>
+                    </div>
+  
+                  <div class="row row-marginTop">
+                    <div class="col-sm-12">
+                      <button type="submit" class="btn btn-large btn-success submit-btn pull-right">SUBMIT</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

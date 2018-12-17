@@ -1,0 +1,11 @@
+.error{
+color: red;
+font-size: 13px;
+
+}
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 9px !important;
+}

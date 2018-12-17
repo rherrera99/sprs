@@ -1,0 +1,275 @@
+<div class="fix-header fix-sidebar card-no-border">
+    <div id="main-wrapper">
+      <ngx-loading [show]="loading"></ngx-loading>
+      <app-headerlogin></app-headerlogin>
+      <app-leftpanedr></app-leftpanedr>
+      <div class="page-wrapper">
+        <div class="container section-margin-top">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  
+  
+  
+  
+  
+              <div *ngIf="formList.length > 0;else nodata">
+                <ngb-tabset>
+                  <ngb-tab *ngFor="let list of formList">
+                    <ng-template ngbTabTitle>{{list.form_name}}</ng-template>
+                    <ng-template ngbTabContent>
+  
+                      <div class="col-xl col-sm col-md">&nbsp;</div>
+                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <form #addRatingForm="ngForm" (ngSubmit)="onClickSubmit(addRatingForm.value)" class="custome-form">
+                          <h2>{{list.form_name}} Reading Form</h2>
+                          <!-- or -->
+                          <ng-template #elseBlock>HElloo formdetails</ng-template>
+  
+  
+  
+                          <hr>
+                          <input type="hidden" name="form_id" id="form_id" value="{{list.id}}" [(ngModel)]="list.id" />
+                          <input type="hidden" name="form_allcated_id" id="form_allcated_id" value="{{list.allcated_id}}" [(ngModel)]="list.allcated_id"
+                          />
+  
+                          <input type="hidden" name="id_list_{{list.id}}" id="id_list_{{list.id}}" value="{{list.id_list}}" [(ngModel)]="list.id_list"
+                          />
+                          <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12" *ngFor="let filedlist of list.formdetails">
+  
+                              <input type="hidden" name="field_id_{{filedlist.id}}" id="field_id_{{filedlist.id}}" value="{{filedlist.field_name}}" [(ngModel)]="filedlist.field_name"
+                              />
+                              <input type="hidden" name="is_dashboard_{{filedlist.id}}" id="is_dashboard_{{filedlist.id}}" value="{{filedlist.field_name}}"
+                                [(ngModel)]="filedlist.is_dashboard" />
+                              <input type="hidden" name="is_table_{{filedlist.id}}" id="is_table_{{filedlist.id}}" value="{{filedlist.field_name}}" [(ngModel)]="filedlist.is_table"
+                              />
+                              <!--Textbox-->
+                              <div *ngIf="filedlist.field_type=='2';">
+  
+                                <label class="">{{filedlist.field_name}}</label>
+                                <div class="row">
+                                  <div class="col-md-8">
+  
+  
+                                    <!-- 
+                                    <input id="name" name="name" class="form-control" required minlength="4" 
+                                    appForbiddenName="bob" [(ngModel)]="filedlist.field_name" #name="ngModel">
+  
+                                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+  
+                                      <div *ngIf="name.errors.required">
+                                        Name is required.
+                                      </div>
+                                      <div *ngIf="name.errors.minlength">
+                                        Name must be at least 4 characters long.
+                                      </div>
+                                      <div *ngIf="name.errors.forbiddenName">
+                                        Name cannot be Bob.
+                                      </div>
+  
+                                    </div> -->
+  
+  
+                                    <input type="text" name="field_value_{{filedlist.id}}" id="field_value_{{filedlist.id}}" class="form-control form-control1 input-marginTop"
+                                      placeholder="{{filedlist.field_name}}" ngModel required>
+  
+                                    <input type="hidden" name="is_required_{{filedlist.id}}" id="is_required_{{filedlist.id}}" value="{{filedlist.is_required}}"
+                                      [(ngModel)]="filedlist.is_required" />
+  
+  
+  
+                                  </div>
+                                  <div class="col-md-3" *ngIf="filedlist.units.length > 0;">
+                                    <select class="form-control form-control1 input-marginTop" id="field_units_{{filedlist.id}}" name="field_units_{{filedlist.id}}"
+                                      ngModel="0">
+                                      <option [value]="0">Select Units</option>
+                                      <option [value]="options" *ngFor="let options of filedlist.units">{{options}}</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <!--Textarea-->
+                              <div *ngIf="filedlist.field_type=='3';">
+                                <label class="">{{filedlist.field_name}}</label>
+                                <div class="row">
+                                  <div class="col-md-8">
+                                    <input type="hidden" name="is_required_{{filedlist.id}}" id="is_required_{{filedlist.id}}" value="{{filedlist.is_required}}"
+                                      [(ngModel)]="filedlist.is_required" />
+                                    <textarea type="text" name="field_value_{{filedlist.id}}" id="field_value_{{filedlist.id}}" class="form-control form-control1 input-marginTop"
+                                      placeholder="{{filedlist.field_name}}" ngModel></textarea>
+                                  </div>
+                                  <div class="col-md-3" *ngIf="filedlist.units.length > 0">
+                                    <select class="form-control form-control1 input-marginTop" id="field_units_{{filedlist.id}}" name="field_units_{{filedlist.id}}"
+                                      ngModel="0">
+                                      <option [value]="0">Select Units</option>
+                                      <option [value]="options" *ngFor="let options of filedlist.units">{{options}}</option>
+                                    </select>
+                                  </div>
+  
+                                </div>
+  
+  
+                              </div>
+                              <!--Radio button-->
+                              <div *ngIf="filedlist.field_type=='4';">
+                                <label class="">{{filedlist.field_name}}</label>
+                                <div class="row"></div>
+                                <div class="col-md-8" style="padding-left: 0px;">
+                                  <input type="hidden" name="is_required_{{filedlist.id}}" id="is_required_{{filedlist.id}}" value="{{filedlist.is_required}}"
+                                    [(ngModel)]="filedlist.is_required" />
+                                  <div *ngFor="let options of filedlist.formoptions">
+                                    <div class="checkbox">
+                                      <input type="radio" name="field_value_{{filedlist.id}}" id="field_value_{{filedlist.id}}_{{options.id}}" required value="{{options.option_name}}"
+                                        ngModel>
+                                      <label for="field_value_{{filedlist.id}}_{{options.id}}"> &nbsp; {{options.option_name}} &nbsp;</label>
+                                    </div>
+  
+                                  </div>
+                                </div>
+                                <div class="col-md-3" *ngIf="filedlist.units.length > 0">
+                                  <select class="form-control form-control1 input-marginTop" id="field_units_{{filedlist.id}}" name="field_units_{{filedlist.id}}"
+                                    ngModel="0">
+                                    <option [value]="0">Select Units</option>
+                                    <option [value]="options" *ngFor="let options of filedlist.units">{{options}}</option>
+                                  </select>
+                                </div>
+  
+  
+                              </div>
+                              <!--Checkbox-->
+                              <div *ngIf="filedlist.field_type=='5';">
+                                <label class="">{{filedlist.field_name}}</label>
+  
+                                <div class="row">
+                                  <div class="col-md-8">
+                                    <input type="hidden" name="is_required_{{filedlist.id}}" id="is_required_{{filedlist.id}}" value="{{filedlist.is_required}}"
+                                      [(ngModel)]="filedlist.is_required" />
+                                    <div *ngFor="let options of filedlist.formoptions">
+                                      <input type="hidden" id="option_value_{{filedlist.id}}_{{options.id}}" name="option_value_{{filedlist.id}}_{{options.id}}"
+                                        value="{{options.option_name}}" [(ngModel)]="options.option_name">
+                                      <div class="checkbox ">
+                                        <input type="checkbox" id="field_value_{{filedlist.id}}_{{options.id}}" name="field_value_{{filedlist.id}}_{{options.id}}"
+                                          value="{{options.id}}" ngModel>
+  
+                                        <label for="field_value_{{filedlist.id}}_{{options.id}}"> &nbsp; {{options.option_name}}</label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-3" *ngIf="filedlist.units.length > 0">
+                                    <select class="form-control form-control1 input-marginTop" id="field_units_{{filedlist.id}}" name="field_units_{{filedlist.id}}"
+                                      ngModel="0">
+                                      <option [value]="0">Select Units</option>
+                                      <option [value]="options" *ngFor="let options of filedlist.units">{{options}}</option>
+                                    </select>
+                                  </div>
+  
+                                </div>
+  
+                              </div>
+                              <!--Dropdown-->
+                              <div *ngIf="filedlist.field_type=='6';">
+                                <label class="">{{filedlist.field_name}}</label>
+  
+                                <div class="row">
+                                  <div class="col-md-8">
+                                    <input type="hidden" name="is_required_{{filedlist.id}}" id="is_required_{{filedlist.id}}" value="{{filedlist.is_required}}"
+                                      [(ngModel)]="filedlist.is_required" /> 
+                                    <select class="form-control form-control1 input-marginTop" id="field_value_{{filedlist.id}}" name="field_value_{{filedlist.id}}"
+                                      ngModel="0">
+                                      <option [value]="0">Select {{filedlist.field_name}}</option>
+                                      <option [value]="options.option_name" *ngFor="let options of filedlist.formoptions">{{options.option_name}}</option>
+                                    </select>
+                                  </div>
+                                  <div class="col-md-3" *ngIf="filedlist.units.length > 0">
+                                    <select class="form-control form-control1 input-marginTop" id="field_units_{{filedlist.id}}" name="field_units_{{filedlist.id}}"
+                                      ngModel="0">
+                                      <option [value]="0">Select Units</option>
+                                      <option [value]="options" *ngFor="let options of filedlist.units">{{options}}</option>
+                                    </select>
+                                  </div>
+  
+                                </div>
+  
+  
+                              </div>
+                              <!--Datepicker-->
+                              <div *ngIf="filedlist.field_type=='7';">
+                                <label class="">{{filedlist.field_name}}</label>
+  
+                                <div class="col-md-8" style="padding-left: 0px;" #startContainer>
+                                  <input type="hidden" name="is_required_{{filedlist.id}}" id="is_required_{{filedlist.id}}" value="{{filedlist.is_required}}"
+                                    [(ngModel)]="filedlist.is_required" />
+                                  <!-- <input type="text" name="field_value_{{filedlist.id}}" id="field_value_{{filedlist.id}}" ngbDatepicker #d="ngbDatepicker"
+                                    (click)="d.toggle()" class="form-control form-control1 datepicker input-marginTop" placeholder="{{filedlist.field_name}}"
+                                    [(ngModel)]="modelTime"> -->
+                                    <input type="date" name="field_value_{{filedlist.id}}" id="field_value_{{filedlist.id}}" [(ngModel)]='modelTime' class="form-control form-control1 datepicker input-marginTop"  placeholder="" >
+                                </div>
+                                <!--ngb-datepicker ></ngb-datepicker-->
+  
+  
+                              </div>
+                              <!--Timepicker-->
+                              <div *ngIf="filedlist.field_type=='8';">
+                                <label class="">{{filedlist.field_name}}</label>
+                                <input type="hidden" name="is_required_{{filedlist.id}}" id="is_required_{{filedlist.id}}" value="{{filedlist.is_required}}"
+                                  [(ngModel)]="filedlist.is_required" />
+                                <!-- <input type="text" name="field_value_{{filedlist.id}}" id="field_value_{{filedlist.id}}" class="form-control form-control1 input-marginTop"
+                                  placeholder="{{filedlist.field_name}}" [(ngModel)]="time"> -->
+  
+                                <ngb-timepicker [(ngModel)]="time1" [meridian]="meridian" name="field_value_{{filedlist.id}}" id="field_value_{{filedlist.id}}"></ngb-timepicker>
+  
+                              </div>
+                              <!--FileUpload-->
+                              <div *ngIf="filedlist.field_type=='9';">
+                                <label class="">{{filedlist.field_name}}</label>
+                                <br/>
+                                <input type="hidden" name="is_required_{{filedlist.id}}" id="is_required_{{filedlist.id}}" value="{{filedlist.is_required}}"
+                                  [(ngModel)]="filedlist.is_required" />
+                                <!-- <input type="text" name="field_value_{{filedlist.id}}" id="field_value_{{filedlist.id}}" class="col-md-3 form-control form-control1 input-marginTop"
+                                  placeholder="{{filedlist.field_name}}" ngModel> -->
+                                  <input type="file" name="field_file_{{filedlist.id}}" id="field_file_{{filedlist.id}}" (change)="onFileChanged($event,filedlist.id)"  />
+  
+                              </div>
+                              <br>
+  
+  
+                            </div>
+  
+                            <div *ngIf="theError.length > 0;" class="col-md-12 alert-danger">
+  
+                              <ul *ngFor="let list of theError">
+  
+                                <li class="error">{{list}}</li>
+                              </ul>
+                            </div>
+  
+  
+                          </div>
+  
+                          <div class="row row-marginTop">
+  
+                            <div class="col-sm-12">
+                              <button type="submit" class="btn btn-large btn-success submit-btn float-right" style="font-size:22px !important;padding: 8px 45px !important;">SUBMIT</button>
+                            </div>
+                            <!-- [disabled]="!addRatingForm.valid" -->
+                          </div>
+                        </form>
+                      </div>
+                      <div class="col-xl col-sm col-md">&nbsp;</div>
+                    </ng-template>
+                  </ngb-tab>
+  
+                </ngb-tabset>
+              </div>
+              <ng-template #nodata>
+                <h4 style="text-align: center;">No Form Found.</h4>
+              </ng-template>
+            </div>
+  
+          </div>
+  
+        </div>
+        <app-footer></app-footer>
+      </div>
+    </div>
+  </div>

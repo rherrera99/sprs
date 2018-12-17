@@ -1,0 +1,108 @@
+<div *ngIf="formList;">
+  <h4 style="text-align: center;">{{theHtmlString}}</h4>
+</div>
+<ngb-tabset>
+  <ngb-tab *ngFor="let list of formList">
+    <ng-template ngbTabTitle>{{list.form_name}}</ng-template>
+    <ng-template ngbTabContent>
+
+      <div class="container-fluid section-margin-top">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" *ngFor="let listdash of list.DashboardData">
+              <div class="row reading-box">
+                <img src="./assets/imgs/heart-icon.png" class="float-right d-inline"> &nbsp;
+                <strong class="d-inline"> &nbsp; {{listdash.is_dashboard_name}}
+                  <br> &nbsp; {{listdash.is_dashboard_value}}</strong>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 reading-txt">
+              <div class="row">
+                <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                  <h2>My Readings</h2>
+                </div>
+                <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 date-form">
+                  <form class="form-inline" style="float: right;">
+                    <div class="form-group">
+                      <label for="pwd">View From </label>
+
+                      <!-- <input type="text" class="form-control form-control2" placeholder="Date" #formdate="ngbDatepicker" name="formdate" ngbDatepicker
+                        #formdate="ngbDatepicker" [(ngModel)]="model_fromdate"  (click)="formdate.toggle()" (ngModelChange) = "onSelect(model_fromdate)" (blur)="model_fromdate = formdate.value;"> -->
+
+
+                      <input type="date" class="form-control form-control2" placeholder="Date" name="formdate" [(ngModel)]="model_fromdate" (ngModelChange)="onSelect(model_fromdate)"
+                        (blur)="model_fromdate = formdate.value;">
+
+
+                    </div>
+                    <div class="form-group" #endContainer>
+                      <label for="pwd">to</label>
+
+
+                      <!-- <input type="text" class="form-control form-control2" placeholder="Date" #todate="ngbDatepicker" name="todate" ngbDatepicker
+                        #todate="ngbDatepicker" [(ngModel)]="model_todate" (click)="todate.toggle()" (ngModelChange) = "onSelect(model_todate)"   aria-live="todate.close()"> -->
+
+                      <input type="date" class="form-control form-control2" placeholder="Date" name="todate" [(ngModel)]="model_todate" (ngModelChange)="onSelect(model_todate)"
+                        aria-live="todate.close()">
+
+
+                    </div>
+
+                    <!-- onSelect($event); -->
+
+
+                  </form>
+                </div>
+              </div>
+
+
+              <div class="table-responsive" *ngIf="list.TabledData.colum_value.length > 0;else nodata">
+
+                <table class="table table-hover custome-table">
+                  <thead>
+                    <tr>
+                      <th *ngFor="let listTablecol of list.TabledData.colum_name ">{{listTablecol}}</th>
+                      <!-- <th>My Readings date</th> -->
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let listTable of list.TabledData.colum_value ">
+                      <td *ngFor="let listTable1 of listTable.value " [routerLink]="['/readingsone/',listTable.id]" style="cursor: pointer;">{{listTable1}}</td>
+                      <!-- <td>
+                          <a [routerLink]="['/readingsone/',listTable.id]">
+                            <img src="./assets/imgs/eye.png" />
+                          </a>
+                          
+                        </td> -->
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+          <ng-template #nodata>
+            <h4 style="text-align: center;">No Record Found.Add New Reading</h4>
+          </ng-template>
+        </div>
+      </div>
+
+
+    </ng-template>
+  </ngb-tab>
+
+</ngb-tabset>
+
+<!-- <ngb-tabset>
+  <ngb-tab *ngFor="let list of formList">
+    <ng-template ngbTabTitle>{{list.form_name}}</ng-template>
+    <ng-template ngbTabContent>
+
+    
+    </ng-template>
+  </ngb-tab>
+
+</ngb-tabset> -->

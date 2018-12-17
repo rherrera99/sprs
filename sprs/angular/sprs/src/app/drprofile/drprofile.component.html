@@ -1,0 +1,63 @@
+<div class="fix-header fix-sidebar card-no-border">
+  <div id="main-wrapper">
+    <app-headerlogin></app-headerlogin>
+    <app-leftpanedr></app-leftpanedr>
+    <div class="page-wrapper">
+      <ngx-loading [show]="loading"></ngx-loading>
+      <div class="container-fluid section-margin-top">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 profile-txt">
+              <h2>Profile</h2>
+              <h2 class="pull-right">
+                <a [routerLink]="['/dr/edit']" title="Edit Profile" class="btn btn-primary btn-circle btn-lg ">
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </a>
+              </h2>
+            </div>
+
+            <div class="col-lg-3 custome-col-lg-3 Mcustome-col-lg-3  col-md-12 col-sm-12 col-xs-12">
+              <div class="box-bg-color profile-pic2 ">
+                <div class="text-center">
+                  <img src={{currentUser.profile_pic}} class="img-responsive" />
+
+
+                  <h1>{{currentUser.name}}</h1>
+                  <h2>{{currentUser.designation}}</h2>
+                </div>
+                <address class="text-center">{{currentUser.address}}
+                </address>
+              </div>
+            </div>
+            <div class="col-lg-9 custome-col-lg-9 Mcustome-col-lg-9  col-md-12 col-sm-12 col-xs-12 ipadmarginTop">
+              <div class="box-bg-color2">
+                <h3>About Me</h3>
+                <hr>
+                <p>{{currentUser.about}}</p>
+                <h3>Personal Information</h3>
+                <hr>
+                <p class="padT15">
+                  <strong>Email : </strong> {{currentUser.email}}</p>
+                <p>
+                  <strong>Contact No. : </strong>{{currentUser.contact_no}}</p>
+                <p>
+                  <strong>Gender : </strong>{{currentUser.gender}}</p>
+                <p>
+                  <strong>Education : </strong>{{currentUser.education}}</p>
+
+                <p>
+                  <strong>Joined on: </strong>{{currentUser.joindate}}</p>
+
+                <p>
+                  <strong>Logged in on: </strong>{{currentUser.last_login}}</p>
+                <p> &nbsp; </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <app-footer></app-footer>
+      </div>
+    </div>
+  </div>
+</div>
